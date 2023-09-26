@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hangman</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js" defer></script>
+	</head>
+	<body>
+		<header class="start-game-header header">
+			<h1 class="name">Hangman Game</h1>
+			<button class="start-game-buttom">Start Game</button>
+		</header>
+		<div class="game">
+			<div class="word"></div>
+			<div class="input">
+				<input type="text" placeholder="Enter a Guess" class="enterInput" />
+				<button class="guess">Guess</button>
+			</div>
+			<p class="incorrect">Enter only one letter or the whole word</p>
+			<p>
+				note: special characters like ë, ç cant be typed. replace them with e,
+				c. even tho you cant type these they will be included and revelead when
+				you type 'e' or 'c'. (there wont be any word with ç)
+			</p>
+		</div>
+		<div class="end-game">
+			<div class="guessed-word">Word: Helikopteri</div>
+			<div class="winning-message">You Won</div>
+			<div class="attempts">12 Attempts</div>
+			<div class="mistakes">12 Mistakes</div>
+			<div class="points">32 Points</div>
+			<button class="play-again">Play Again</button>
+			<button class="leaderboard">Leaderboard</button>
+		</div>
+		<span class="span"></span>
+	</body>
+</html>

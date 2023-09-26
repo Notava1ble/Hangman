@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+body {
+	font: 1.5rem "Nunito", sans-serif;
+	min-height: 100vh;
+}
+
+/* || HEADER */
+.header {
+	background: linear-gradient(to right, #369, #396);
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	display: flex;
+}
+
+.header h1 {
+	text-align: center;
+	font-size: 4rem;
+	margin-bottom: 40px;
+}
+
+.header button {
+	font: inherit;
+	outline: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 1rem;
+	border-radius: 12px;
+	font-size: 3rem;
+}
+
+/* || GAME */
+.game {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-flow: column nowrap;
+	background-color: #131313;
+	color: white;
+}
+
+.game p {
+	font-size: 10px;
+	width: 300px;
+	margin-top: 32px;
+}
+
+.game .incorrect {
+	margin-top: 0;
+	text-align: center;
+	color: red;
+	display: none;
+	font-size: 12px;
+}
+
+.word {
+	letter-spacing: 5px;
+	font-size: 2rem;
+}
+
+.input {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input input {
+	padding: 0.5rem;
+	outline: none;
+	border: 2px solid #333;
+	font: inherit;
+	width: 60%;
+	border-radius: 40px 0 0 40px;
+	padding-left: 1rem;
+	border-right: none;
+	background-color: #131313;
+	color: white;
+}
+
+.input button {
+	font: inherit;
+	outline: none;
+	padding: 0.5rem;
+	border-radius: 0 40px 40px 0;
+	border: none;
+	background-color: white;
+	padding-right: 1rem;
+	background-color: #333;
+	color: white;
+	border: 2px solid #333;
+}
+
+/* || END GAME */
+.end-game {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: White;
+	font-weight: 500;
+}
+
+.end-game div {
+	margin: 0.5rem;
+}
+
+.end-game button {
+	font: inherit;
+	outline: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 0.5rem;
+	border-radius: 12px;
+	font-size: 2rem;
+	margin: 1rem;
+}
+
+.show {
+	display: flex;
+}
