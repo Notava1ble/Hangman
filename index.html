@@ -5,12 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Hangman</title>
 		<link rel="stylesheet" href="style.css" />
-		<script src="main.js" defer></script>
+		<script src="main.js" module defer></script>
 	</head>
 	<body>
 		<header class="start-game-header header">
 			<h1 class="name">Hangman Game</h1>
-			<button class="start-game-buttom">Start Game</button>
+			<div class="buttons">
+				<button class="easy options">easy</button>
+				<button class="medium options">medium</button>
+				<button class="hard options">hard</button>
+			</div>
 		</header>
 		<div class="game">
 			<div class="word"></div>
