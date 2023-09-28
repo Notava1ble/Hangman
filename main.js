@@ -90,7 +90,7 @@ const mediumWords = [
 	"perimet",
 	"ushqimore",
 	"automjeti",
-	"biççikleta",
+	"biçikleta",
 	"sporti",
 	"futbolli",
 	"kampionati",
@@ -136,6 +136,7 @@ const guessButton = document.querySelector(".guess");
 const incorrectP = document.querySelector(".incorrect");
 const span = document.querySelector(".span");
 const endGame = document.querySelector(".end-game");
+const letters = document.querySelectorAll(".letters");
 
 const guessedWordDiv = document.querySelector(".guessed-word");
 const winningMassege = document.querySelector(".winning-message");
@@ -148,6 +149,8 @@ const easy = document.querySelector(".easy");
 const medium = document.querySelector(".medium");
 const hard = document.querySelector(".hard");
 const difficultyButtons = document.querySelectorAll(".options");
+const leaderboardDiv = document.querySelector(".leaderboard-section");
+const backLeaderboard = document.querySelector(".leaderboard-back");
 
 // PRESET VARAIBLES
 let wordArray;
@@ -161,6 +164,7 @@ let won;
 let points;
 let difficultyChoosed;
 let startGameTrigger;
+let foundmatch;
 
 // CODE
 
@@ -225,13 +229,34 @@ function showDisplay() {
 
 function checkGuess() {}
 
+letters.forEach((letter) => {
+	letter.addEventListener("click", (event) => {
+		if (
+			event.target.classList.contains("red") ||
+			event.target.classList.contains("green")
+		) {
+			console.log("cant press this");
+		} else {
+			guessedLetter = event.target.textContent;
+			checkInput(event.target);
+			if (foundmatch === true) {
+				event.target.classList.add("green");
+			} else {
+				event.target.classList.add("red");
+			}
+		}
+	});
+});
+
 input.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
+		guessedLetter = input.value.toLowerCase();
 		checkInput();
 	}
 });
 
 guessButton.addEventListener("click", (e) => {
+	guessedLetter = input.value.toLowerCase();
 	checkInput();
 });
 
@@ -268,19 +293,21 @@ playAgain.addEventListener("click", (e) => {
 	location.reload();
 });
 leaderboard.addEventListener("click", (e) => {
-	alert("send best points with ss te grupi qe te boj leaderboard");
+	manageLeaderboard();
+});
+backLeaderboard.addEventListener("click", (event) => {
+	leaderboardDiv.style.display = "none";
 });
 
 function checkInput() {
 	console.log(wordDiv);
-	guessedLetter = input.value.toLowerCase();
 	wordFormat = wordDiv;
 	// clearWord();
 	let i = 0;
 	input.value = "";
 	attempts++;
 	console.log("attempts: " + attempts);
-	let foundmatch = false;
+	foundmatch = false;
 	if (randomWord === guessedLetter) {
 		winDisplay();
 		foundmatch = true;
@@ -310,6 +337,15 @@ function checkInput() {
 		won = true;
 		winDisplay();
 	}
+}
+
+function letterClicked() {
+	guessedLetter = "a";
+}
+
+function manageLeaderboard() {
+	console.log("here");
+	leaderboardDiv.style.display = "block";
 }
 
 function calculatePoints() {
